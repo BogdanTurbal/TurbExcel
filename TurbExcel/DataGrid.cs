@@ -93,7 +93,7 @@ namespace TurbExcel
             cells = new Dictionary<string, Cell>();
             _numberOfColumns = numberOfColumns;
             _numberOfRows = numberOfRows;
-            Debug.WriteLine("NUM_COL: {0} NUM_ROW: {1}", _numberOfColumns, _numberOfRows);
+            //Debug.WriteLine("NUM_COL: {0} NUM_ROW: {1}", _numberOfColumns, _numberOfRows);
             for (int i = 0; i < _numberOfColumns; i++)
             {
                 for (int j = 0; j < _numberOfRows; j++)
@@ -162,7 +162,8 @@ namespace TurbExcel
                 cellList.RemoveAt(0);
                 if (renewCells.Contains(first))
                 {
-                    throw new Exception("contains cyclic" + first.Name);
+                    throw new ArgumentException("invalid expression: contain cycle");
+                    //throw new ("contains cyclic" + first.Name);
                 }
                 renewCells.Add(first);
 
@@ -186,7 +187,8 @@ namespace TurbExcel
                 cellList.RemoveAt(0);
                 if (renewCells.Contains(first))
                 {
-                    throw new Exception("contains cyclic" + first.Name);
+                    //throw new Exception("contains cyclic" + first.Name);
+                    throw new ArgumentException("invalid expression: contain cycle");
                 }
                 renewCells.Add(first);
 

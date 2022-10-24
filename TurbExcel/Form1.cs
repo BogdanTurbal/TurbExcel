@@ -228,6 +228,28 @@ namespace TurbExcel
             
         }
 
-       
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(@" Привіт! Це TurbExcel який допоможе тобі виконувати оперції з таблицями.
+Підказки:
+1.можна ввести просто чило або = число
+21212 або = 3434
+2.Можна ввести вираз з посиланнями на інши клітинки
+= b1 * 2 + 434 + C1
+3.Цикли як і ділення на 0 неможливі
+4.Можна ввести просто рядок
+5.Вкінці можна зберігти і загрузити", "Help");
+           
+        }
     }
 }

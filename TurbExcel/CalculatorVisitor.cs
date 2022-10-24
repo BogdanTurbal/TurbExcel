@@ -50,6 +50,7 @@ namespace TurbExcel
         {
             var left = WalkLeft(context);
             var right = WalkRight(context);
+            if (left == 0 && right < 0) throw new DivideByZeroException("0 in denimunator");
             Debug.WriteLine("{0} ^ {1}", left, right);
             return System.Math.Pow(left, right);
         }
@@ -79,6 +80,7 @@ namespace TurbExcel
             }
             else //LabCalculatorLexer.DIVIDE
             {
+                if (right == 0) throw new DivideByZeroException("divide by zero");
                 //Debug.WriteLine("{0} / {1}", left, right);
                 return left / right;
             }
@@ -96,6 +98,7 @@ namespace TurbExcel
         {
             var left = WalkLeft(context);
             var right = WalkRight(context);
+            if (right == 0) throw new DivideByZeroException("in mod divide by 0");
             return context.operatorToken.Type == CalculatorLexer.MOD
                 ? left % right
                 : (int)left / (int)right;

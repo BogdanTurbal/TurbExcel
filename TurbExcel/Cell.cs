@@ -53,8 +53,7 @@ namespace TurbExcel
                 _exp = value;
                 if (_exp.Length > 0 && _exp[0] == '=')
                 UpdateDependencies();
-                Debug.WriteLine(3333);
-
+                //Debug.WriteLine(3333);
                 try
                 {
                     UpdateVal(_exp);
