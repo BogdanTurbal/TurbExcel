@@ -32,7 +32,7 @@ namespace TurbExcel
             //Debug.WriteLine("hehehehjhjh");
             var result = context.GetText().ToUpper();
             var currentCell = dataGrid.Cells[result.ToString()];
-            if (currentCell.State != CellState.ERROR)
+            if (currentCell.State != CellState.ERROR && currentCell.State != CellState.STRING)
             {
                 return currentCell.Value;
             }
@@ -84,6 +84,16 @@ namespace TurbExcel
                 //Debug.WriteLine("{0} / {1}", left, right);
                 return left / right;
             }
+        }
+        public override double VisitSubOper([NotNull] CalculatorParser.SubOperContext context)
+        {
+            var left = WalkLeft(context);
+            return -left;
+        }
+        public override double VisitAddOper([NotNull] CalculatorParser.AddOperContext context)
+        {
+            var left = WalkLeft(context);
+            return left;
         }
         private double WalkLeft(CalculatorParser.ExpressionContext context)
         {

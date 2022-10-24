@@ -65,18 +65,19 @@ namespace TurbExcel
         public void DeleteRow()
         {
             //_numberOfRows++;
+            _numberOfRows--;
             for (int i = 0; i < _numberOfColumns; i++)
             {
-                cells.Remove(ComputeName(i, NumberOfRows-1));
+                cells.Remove(ComputeName(i, NumberOfRows));
             }
-            _numberOfRows--;
+            
         }
         public void AddColumn()
         {
             _numberOfColumns++;
             for (int i = 0; i < _numberOfRows; i++)
             {
-                Cell cell = new(this, _numberOfRows-1, i, "");
+                Cell cell = new(this, _numberOfColumns - 1, i, "");
                 cells[cell.Name] = cell;
             }
         }
@@ -84,7 +85,7 @@ namespace TurbExcel
         {
             for (int i = 0; i < _numberOfRows; i++)
             {
-                cells.Remove(ComputeName(_numberOfRows - 1, i));
+                cells.Remove(ComputeName(_numberOfColumns - 1, i));
             }
             _numberOfColumns--;
         }
@@ -94,6 +95,7 @@ namespace TurbExcel
             _numberOfColumns = numberOfColumns;
             _numberOfRows = numberOfRows;
             //Debug.WriteLine("NUM_COL: {0} NUM_ROW: {1}", _numberOfColumns, _numberOfRows);
+            //Debug.WriteLine("heh1");
             for (int i = 0; i < _numberOfColumns; i++)
             {
                 for (int j = 0; j < _numberOfRows; j++)
@@ -104,6 +106,7 @@ namespace TurbExcel
                     //cell.Exp = ;
                 }
             }
+            //Debug.WriteLine("heh2");
             for (int i = 0; i < _numberOfColumns; i++)
             {
                 for (int j = 0; j < _numberOfRows; j++)

@@ -46,13 +46,6 @@ namespace TurbExcel
             {
                 
                 File.WriteAllText(path, JsonConvert.SerializeObject(newDict));
-                /*using (stream)
-                {
-                    // create BinaryFormatter
-                    BinaryFormatter bin = new BinaryFormatter();
-                    // serialize the collection (EmployeeList1) to file (stream)
-                    bin.Serialize(stream, dictionary);
-                }*/
             }
             catch (Exception)
             {

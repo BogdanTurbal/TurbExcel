@@ -5,6 +5,8 @@ expression :
 LPAREN expression RPAREN #ParenthesizedExpr
 |expression EXPONENT expression #ExponentialExpr
 | expression operatorToken=(MULTIPLY | DIVIDE) expression #MultiplicativeExpr
+| operatorToken=SUBTRACT expression #SubOper
+| operatorToken=ADD expression #AddOper
 | expression operatorToken=(ADD | SUBTRACT) expression #AdditiveExpr
 | operatorToken=(MOD | DIV) LPAREN expression ',' expression RPAREN #ModDivExpr
 | MMAX LPAREN paramlist=arglist RPAREN #MmaxExpr

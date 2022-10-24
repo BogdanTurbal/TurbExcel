@@ -77,9 +77,9 @@
             this.temp.Location = new System.Drawing.Point(23, 668);
             this.temp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.temp.Name = "temp";
-            this.temp.Size = new System.Drawing.Size(38, 15);
+            this.temp.Size = new System.Drawing.Size(16, 15);
             this.temp.TabIndex = 3;
-            this.temp.Text = "label1";
+            this.temp.Text = "...";
             // 
             // editMenu
             // 

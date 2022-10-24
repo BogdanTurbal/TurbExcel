@@ -151,13 +151,19 @@ namespace TurbExcel
             {
                 try
                 {
+                    //Debug.WriteLine("sorry-1)");
                     string path = Path.GetFullPath(sfd.FileName);
+                    //Debug.WriteLine("sorry0)");
                     var dict = SaveLoadData.Deserialize(path);
+                    //Debug.WriteLine("sorry1)");
                     int numCol = Int32.Parse(dict[("columns", "")]);
                     int numRow = Int32.Parse(dict[("rows", "")]);
+
+                    //Debug.WriteLine("sorry2)");
                     temp.Focus();
                     ClearDataGridView(numCol, numRow);
                     temp.Focus();
+                    //Debug.WriteLine("sorry3)");
                     lastPath = path;
                     dataGrid = new DataGrid(numCol, numRow, dict);
                 } catch {
