@@ -53,7 +53,6 @@ namespace TurbExcel
                 _exp = value;
                 if (_exp.Length > 0 && _exp[0] == '=')
                 UpdateDependencies();
-                //Debug.WriteLine(3333);
                 try
                 {
                     UpdateVal(_exp);
@@ -86,7 +85,6 @@ namespace TurbExcel
                 try
                 {
                     exp = exp.Substring(1);
-                    //Debug.WriteLine(exp);
                     val = Calculator.Evaluate(exp, dataGrid);
                     _state = CellState.NUMERIC_EXPRESSION;
                 }
@@ -94,8 +92,7 @@ namespace TurbExcel
                     _state = CellState.ERROR;
                     throw new FormatException("can't parse " + exp);
                 }
-                _value = val;
-                //Debug.WriteLine("_val is" + _value);   
+                _value = val; 
             }
             else
             {

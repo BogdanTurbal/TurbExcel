@@ -173,12 +173,10 @@ namespace TurbExcel
 
         private void dataGridView_MouseClick_1(object sender, MouseEventArgs e)
         {
-            Debug.WriteLine(1);
             switch (e.Button)
             {
                 case MouseButtons.Right:
                     {
-                        Debug.WriteLine(2);
                         editMenu.Show(this, new Point(e.X, e.Y));//places the menu at the pointer position
                     }
                     break;
