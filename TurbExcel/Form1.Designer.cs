@@ -55,7 +55,7 @@
             this.dataGridView.Location = new System.Drawing.Point(13, 56);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(1177, 603);
+            this.dataGridView.Size = new System.Drawing.Size(1177, 602);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEnter);
@@ -74,7 +74,7 @@
             // temp
             // 
             this.temp.AutoSize = true;
-            this.temp.Location = new System.Drawing.Point(23, 668);
+            this.temp.Location = new System.Drawing.Point(13, 661);
             this.temp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.temp.Name = "temp";
             this.temp.Size = new System.Drawing.Size(16, 15);

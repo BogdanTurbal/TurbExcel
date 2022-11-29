@@ -1,6 +1,7 @@
 using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace TurbExcel
 {
@@ -16,6 +17,8 @@ namespace TurbExcel
         {
             InitializeComponent();
             InitializeDataGrid(NUM_COL, NUM_ROW);
+            this.Text = "TurbExcel";
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void InitializeDataGrid(int numCol, int numRow)
@@ -153,13 +156,11 @@ namespace TurbExcel
                 {
                     //Debug.WriteLine("sorry-1)");
                     string path = Path.GetFullPath(sfd.FileName);
-                    //Debug.WriteLine("sorry0)");
                     var dict = SaveLoadData.Deserialize(path);
-                    //Debug.WriteLine("sorry1)");
                     int numCol = Int32.Parse(dict[("columns", "")]);
                     int numRow = Int32.Parse(dict[("rows", "")]);
 
-                    //Debug.WriteLine("sorry2)");
+
                     temp.Focus();
                     ClearDataGridView(numCol, numRow);
                     temp.Focus();
